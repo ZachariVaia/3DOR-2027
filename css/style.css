@@ -534,17 +534,6 @@ li::marker {
   text-shadow: 0 2px 14px rgba(10, 18, 26, 0.4);
 }
 
-.hero__credit {
-  position: absolute;
-  right: 16px;
-  bottom: 10px;
-  z-index: 1;
-  margin: 0;
-  font-size: 0.66rem;
-  letter-spacing: 0.06em;
-  color: rgba(255, 255, 255, 0.72);
-}
-
 /* Centred intro block under the hero */
 .center {
   text-align: center;
