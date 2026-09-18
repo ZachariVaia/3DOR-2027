@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SHREC 2027 — 3DOR 2027, Athens</title>
+<title>SHREC 2027 | 3DOR 2027, Athens</title>
 <meta name="description" content="SHREC 2027 evaluation tracks at 3DOR 2027 in Athens. Track proposal deadline: 27 November 2026.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,16 +17,8 @@
 <header class="site-header">
   <div class="wrap site-header__inner">
     <a class="brand" href="index.html">
-      <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true">
-        <g fill="none" stroke="#06b6d4" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round">
-          <path d="M32 6 55 18.5v27L32 58 9 45.5v-27L32 6Z"/>
-          <path d="M9 18.5 32 31l23-12.5M32 31v27"/>
-        </g>
-      </svg>
-      <span>
-        <span class="brand__text">3DOR<span>27</span></span>
-        <span class="brand__sub">Athens, Greece</span>
-      </span>
+      <span class="brand__text">3DOR2027</span>
+      <span class="brand__city">Athens, Greece</span>
     </a>
 
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
@@ -35,11 +27,22 @@
 
     <nav class="nav" id="primary-nav" aria-label="Primary">
       <a href="index.html">Home</a>
-      <a href="important-dates.html">Important Dates</a>
-      <a href="call-for-papers.html">Call for Papers</a>
-      <a href="shrec.html" class="is-active">SHREC 2027</a>
+
+      <div class="nav__group">
+        <button class="nav__trigger" type="button" aria-expanded="false">
+          For authors
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="nav__menu">
+          <a href="call-for-papers.html">Call for papers</a>
+          <a href="important-dates.html">Important dates</a>
+          <a href="shrec.html" class="is-active">SHREC 2027</a>
+        </div>
+      </div>
+
+      <a href="program.html">Program</a>
+      <a href="venue.html">Venue &amp; travel</a>
       <a href="organizers.html">Organizers</a>
-      <a href="venue.html">Venue</a>
       <a href="contact.html">Contact</a>
     </nav>
   </div>
@@ -48,51 +51,45 @@
 <main id="main">
 
   <section class="page-head">
-    <div class="wrap">
-      <p class="breadcrumb"><a href="index.html">Home</a> / SHREC 2027</p>
+    <div class="col">
+      <p class="breadcrumb"><a href="index.html">Home</a> / For authors / SHREC 2027</p>
       <h1>SHREC 2027</h1>
-      <p>The SHREC evaluation tracks are presented at the 3DOR symposium. Proposals for 2027 tracks are due on 27 November 2026.</p>
+      <p>The SHREC evaluation tracks are presented at the 3DOR symposium. Track proposals for 2027 are due on 27 November 2026.</p>
     </div>
   </section>
 
   <section class="section">
-    <div class="wrap wrap--narrow">
+    <div class="col">
 
-      <div class="card date-card" style="margin-bottom:2.5rem">
-        <span class="date-card__date">27 November 2026</span>
-        <span class="date-card__label">Track proposal deadline</span>
-        <p>Deadline for submitting a SHREC 2027 track proposal. Notification, track running period and results submission dates will follow.</p>
+      <div class="box">
+        <span class="box__date">27 November 2026</span>
+        <span class="box__what">Track proposal deadline</span>
+        <p class="note">Notification, track running period and results submission dates follow. See <a href="important-dates.html">important dates</a>.</p>
       </div>
 
-      <div class="prose">
-        <h2>Proposing a track</h2>
-        <p>
-          A SHREC track is a comparative evaluation on a shared benchmark: the
-          organisers define a task, prepare a dataset and ground truth, collect runs
-          from participants and report the results at the symposium. Tracks cover
-          retrieval as well as related problems such as classification, correspondence
-          and segmentation of 3D data.
-        </p>
-        <p>
-          Detailed proposal requirements, the submission channel and the full track
-          calendar for 2027 will be published on this page. If you are considering
-          organising a track, get in touch with the organisers early.
-        </p>
-      </div>
+      <h2>What a track is</h2>
+      <hr class="rule">
+      <p>
+        A SHREC track is a comparative evaluation on a shared benchmark. The track
+        organisers define a task, prepare a dataset and ground truth, collect runs from
+        participants, and report the combined results at the symposium.
+      </p>
+      <p>
+        Tracks cover retrieval as well as neighbouring problems on 3D data such as
+        classification, correspondence and segmentation.
+      </p>
 
-      <div class="tba" style="margin-top:2.5rem">
-        <div class="tba__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V5M4 19h16"/><path d="M8 16V9M13 16v-4M18 16V6"/></svg>
-        </div>
-        <h3>Accepted tracks to be announced</h3>
-        <p>
-          The list of SHREC 2027 tracks, their datasets and participation deadlines
-          will appear here after the proposal review.
-        </p>
-        <div class="btn-row" style="justify-content:center">
-          <a class="btn btn--outline" href="contact.html">Contact the SHREC chair</a>
-        </div>
-      </div>
+      <h2>Proposing a track</h2>
+      <hr class="rule">
+      <p>
+        Detailed proposal requirements, the submission channel and the full track
+        calendar for 2027 will be published on this page. If you are considering
+        organising a track, it helps to <a href="contact.html">get in touch</a> early.
+      </p>
+
+      <h2>Accepted tracks</h2>
+      <hr class="rule">
+      <p class="tba-line">To be announced after the proposal review</p>
 
     </div>
   </section>
@@ -102,9 +99,9 @@
 <footer class="site-footer">
   <div class="wrap">
     <div class="site-footer__grid">
-      <div class="footer-brand">
-        <div class="footer-brand__text">3DOR<span>27</span></div>
-        <p>Symposium on 3D Object Retrieval — Athens, Greece, 2–3 September 2027.</p>
+      <div class="site-footer__brand">
+        <span class="brand__text">3DOR2027</span>
+        <p>Symposium on 3D Object Retrieval<br>Athens, Greece · 2-3 September 2027</p>
       </div>
 
       <div>
@@ -119,8 +116,9 @@
       <div>
         <h4>Symposium</h4>
         <ul>
-          <li><a href="organizers.html">Organizers</a></li>
+          <li><a href="program.html">Program</a></li>
           <li><a href="venue.html">Venue &amp; travel</a></li>
+          <li><a href="organizers.html">Organizers</a></li>
           <li><a href="previous-editions.html">Previous editions</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -128,8 +126,8 @@
     </div>
 
     <div class="site-footer__bottom">
-      <span>&copy; <span data-current-year>2026</span> 3DOR 2027 Organizing Committee</span>
-      <span>Athens, Greece · 2–3 September 2027</span>
+      <span>&copy; <span data-current-year>2026</span> 3DOR 2027</span>
+      <span>Athens, Greece · 2-3 September 2027</span>
     </div>
   </div>
 </footer>

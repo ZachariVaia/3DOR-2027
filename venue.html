@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Venue &amp; Travel — 3DOR 2027, Athens</title>
-<meta name="description" content="3DOR 2027 takes place in Athens, Greece on 2–3 September 2027. Venue, accommodation and travel information coming soon.">
+<title>Venue &amp; Travel | 3DOR 2027, Athens</title>
+<meta name="description" content="3DOR 2027 takes place in Athens, Greece on 2-3 September 2027. Venue, accommodation and travel information.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,16 +17,8 @@
 <header class="site-header">
   <div class="wrap site-header__inner">
     <a class="brand" href="index.html">
-      <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true">
-        <g fill="none" stroke="#06b6d4" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round">
-          <path d="M32 6 55 18.5v27L32 58 9 45.5v-27L32 6Z"/>
-          <path d="M9 18.5 32 31l23-12.5M32 31v27"/>
-        </g>
-      </svg>
-      <span>
-        <span class="brand__text">3DOR<span>27</span></span>
-        <span class="brand__sub">Athens, Greece</span>
-      </span>
+      <span class="brand__text">3DOR2027</span>
+      <span class="brand__city">Athens, Greece</span>
     </a>
 
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
@@ -35,11 +27,22 @@
 
     <nav class="nav" id="primary-nav" aria-label="Primary">
       <a href="index.html">Home</a>
-      <a href="important-dates.html">Important Dates</a>
-      <a href="call-for-papers.html">Call for Papers</a>
-      <a href="shrec.html">SHREC 2027</a>
+
+      <div class="nav__group">
+        <button class="nav__trigger" type="button" aria-expanded="false">
+          For authors
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="nav__menu">
+          <a href="call-for-papers.html">Call for papers</a>
+          <a href="important-dates.html">Important dates</a>
+          <a href="shrec.html">SHREC 2027</a>
+        </div>
+      </div>
+
+      <a href="program.html">Program</a>
+      <a href="venue.html" class="is-active">Venue &amp; travel</a>
       <a href="organizers.html">Organizers</a>
-      <a href="venue.html" class="is-active">Venue</a>
       <a href="contact.html">Contact</a>
     </nav>
   </div>
@@ -48,64 +51,51 @@
 <main id="main">
 
   <section class="page-head">
-    <div class="wrap">
+    <div class="col">
       <p class="breadcrumb"><a href="index.html">Home</a> / Venue &amp; travel</p>
       <h1>Venue &amp; travel</h1>
-      <p>3DOR 2027 takes place in Athens, Greece. The exact venue and travel guidance will be published here.</p>
+      <p>3DOR 2027 takes place in Athens, Greece. The exact venue will be published here.</p>
     </div>
   </section>
 
   <section class="section">
-    <div class="wrap">
+    <div class="col">
 
-      <div class="grid grid--2">
-        <div>
-          <dl class="facts">
-            <div>
-              <dt>City</dt>
-              <dd>Athens, Greece</dd>
-            </div>
-            <div>
-              <dt>Dates</dt>
-              <dd>2–3 September 2027</dd>
-            </div>
-            <div>
-              <dt>Venue</dt>
-              <dd><span class="badge badge--tba">To be announced</span></dd>
-            </div>
-            <div>
-              <dt>Registration</dt>
-              <dd><span class="badge badge--tba">To be announced</span></dd>
-            </div>
-          </dl>
-        </div>
+      <h2>Venue</h2>
+      <hr class="rule">
+      <p class="tba-line">To be announced</p>
+      <p>
+        The conference location, room details and a map will be added as soon as the
+        venue is confirmed.
+      </p>
 
-        <div class="prose">
-          <h2>Getting to Athens</h2>
-          <p>
-            Athens is served by Athens International Airport “Eleftherios Venizelos”
-            (ATH), connected to the city centre by metro, suburban rail and bus. The
-            city has an extensive metro network, and early September is typically warm
-            and dry.
-          </p>
-          <p>
-            Recommendations for accommodation near the venue, along with practical
-            information on local transport and visa requirements, will be added once
-            the venue is confirmed.
-          </p>
-        </div>
-      </div>
+      <h2>Getting to Athens</h2>
+      <hr class="rule">
+      <p>
+        Athens International Airport “Eleftherios Venizelos” (ATH) is the main gateway,
+        connected to the city centre by metro line 3, suburban rail and express buses.
+        Within the city, three metro lines plus trams and buses cover most districts.
+      </p>
+      <p>
+        Early September in Athens is typically warm and dry, with daytime temperatures
+        often around 30 °C.
+      </p>
 
-      <div class="tba" style="margin-top:3rem">
-        <div class="tba__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
-        </div>
-        <h3>Venue details coming soon</h3>
-        <p>
-          The conference location, room information, map and accommodation options
-          will be published on this page.
-        </p>
-      </div>
+      <h2>Accommodation</h2>
+      <hr class="rule">
+      <p class="tba-line">To be announced</p>
+      <p>
+        Suggested hotels near the venue, and any negotiated rates, will be listed once
+        the venue is fixed.
+      </p>
+
+      <h2>Registration</h2>
+      <hr class="rule">
+      <p class="tba-line">To be announced</p>
+
+      <figure>
+        <img class="skyline" src="assets/athens.svg" alt="Line drawing of the Athens skyline with the Acropolis and Lycabettus hill" width="1200" height="290">
+      </figure>
 
     </div>
   </section>
@@ -115,9 +105,9 @@
 <footer class="site-footer">
   <div class="wrap">
     <div class="site-footer__grid">
-      <div class="footer-brand">
-        <div class="footer-brand__text">3DOR<span>27</span></div>
-        <p>Symposium on 3D Object Retrieval — Athens, Greece, 2–3 September 2027.</p>
+      <div class="site-footer__brand">
+        <span class="brand__text">3DOR2027</span>
+        <p>Symposium on 3D Object Retrieval<br>Athens, Greece · 2-3 September 2027</p>
       </div>
 
       <div>
@@ -132,8 +122,9 @@
       <div>
         <h4>Symposium</h4>
         <ul>
-          <li><a href="organizers.html">Organizers</a></li>
+          <li><a href="program.html">Program</a></li>
           <li><a href="venue.html">Venue &amp; travel</a></li>
+          <li><a href="organizers.html">Organizers</a></li>
           <li><a href="previous-editions.html">Previous editions</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -141,8 +132,8 @@
     </div>
 
     <div class="site-footer__bottom">
-      <span>&copy; <span data-current-year>2026</span> 3DOR 2027 Organizing Committee</span>
-      <span>Athens, Greece · 2–3 September 2027</span>
+      <span>&copy; <span data-current-year>2026</span> 3DOR 2027</span>
+      <span>Athens, Greece · 2-3 September 2027</span>
     </div>
   </div>
 </footer>
