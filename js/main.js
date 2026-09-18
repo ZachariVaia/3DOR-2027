@@ -49,23 +49,6 @@
     }
   });
 
-  /* Days remaining until the symposium ------------------------------- */
-  const days = document.querySelector("[data-days-until]");
-
-  if (days) {
-    const target = new Date(days.dataset.daysUntil).getTime();
-    const remaining = Math.ceil((target - Date.now()) / 86400000);
-
-    days.textContent =
-      remaining > 1
-        ? remaining + " days to go"
-        : remaining === 1
-        ? "Tomorrow"
-        : remaining === 0
-        ? "Today"
-        : "";
-  }
-
   /* Footer year ------------------------------------------------------ */
   document.querySelectorAll("[data-current-year]").forEach((el) => {
     el.textContent = String(new Date().getFullYear());

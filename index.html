@@ -11,7 +11,7 @@
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -46,6 +46,7 @@
       <a href="program.html">Program</a>
       <a href="venue.html">Venue &amp; travel</a>
       <a href="organizers.html">Organizers</a>
+      <a href="previous-editions.html">Previous editions</a>
       <a href="contact.html">Contact</a>
     </nav>
   </div>
@@ -53,13 +54,20 @@
 
 <main id="main">
 
-  <section class="masthead">
-    <div class="col">
+  <section class="hero">
+    <img class="hero__media" src="assets/acropolis.jpg" alt="" width="2000" height="1333">
+    <div class="hero__inner">
       <span class="label">Symposium on 3D Object Retrieval</span>
       <h1>3DOR 2027</h1>
-      <p class="masthead__sub">Athens, Greece</p>
+      <p class="hero__where">Athens, Greece, 2-3 September 2027</p>
+    </div>
+    <!-- Add the photographer or stock-library credit here before publishing -->
+    <p class="hero__credit">Photo: credit to be added</p>
+  </section>
 
-      <dl class="keyfacts">
+  <section class="section">
+    <div class="col center">
+      <dl class="keyfacts keyfacts--center">
         <div>
           <dt>Conference dates</dt>
           <dd>2-3 September 2027</dd>
@@ -70,9 +78,6 @@
         </div>
       </dl>
 
-      <span class="days" data-days-until="2027-09-02T09:00:00"></span>
-
-      <hr class="rule">
       <p class="lead">
         3DOR is the annual meeting point for research on the retrieval, matching
         and analysis of 3D objects and shapes. The 2027 edition comes to Athens for
@@ -83,12 +88,6 @@
         papers, committees and programme will follow in the coming months.
       </p>
     </div>
-
-    <figure class="photoband">
-      <img src="assets/acropolis.jpg" alt="The Acropolis of Athens at sunset" width="2000" height="1333">
-      <!-- Add the photographer or stock-library credit in the caption below before publishing -->
-      <figcaption>Host city: Athens, Greece</figcaption>
-    </figure>
   </section>
 
   <section class="section section--alt">
@@ -209,6 +208,20 @@
   </section>
 
 </main>
+
+<section class="partners">
+  <div class="wrap">
+    <span class="label">In cooperation with</span>
+    <div class="partners__logos">
+      <a href="https://www.eg.org/" target="_blank" rel="noopener">
+        <img class="logo--eg" src="assets/logo-eurographics.png" alt="Eurographics, European Association for Computer Graphics" width="1080" height="180">
+      </a>
+      <a href="https://www.sciencedirect.com/journal/computers-and-graphics" target="_blank" rel="noopener">
+        <img class="logo--elsevier" src="assets/logo-elsevier.svg" alt="Elsevier" width="171" height="48">
+      </a>
+    </div>
+  </div>
+</section>
 
 <footer class="site-footer">
   <div class="wrap">

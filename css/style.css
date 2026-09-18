@@ -11,9 +11,10 @@
   --accent: #35556e;        /* display headings, brand, links */
   --accent-strong: #26404f; /* hover on slate */
   --accent-deep: #35556e;   /* links and small text (7.8:1 on paper) */
-  --accent-bright: #35556e; /* rules, underlines, markers */
+  --accent-bright: #e97770; /* coral, after 3DOR 2015: rules, underlines, markers */
+  --accent-warm: #c6564e;   /* darker coral where small text needs contrast */
   --accent-soft: #b0bec5;   /* blue grey: quiet dividers and borders */
-  --accent-cyan: #1ea7c6;   /* reserved for the countdown pill and caption tick */
+  --charcoal: #2f333b;      /* dark band, after 3DOR 2015 */
   --accent-pale: #eef3f7;
   --accent-line: #ccd9e3;
 
@@ -24,7 +25,7 @@
   --paper: #fafbfc;
   --paper-alt: #f1f6f8;
 
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  --font-sans: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Helvetica, Arial, sans-serif;
   --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono",
     Menlo, monospace;
@@ -70,16 +71,18 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   color: var(--ink);
-  line-height: 1.22;
-  letter-spacing: -0.02em;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
   font-weight: 700;
   margin: 0 0 0.6em;
 }
 
 h1 {
   font-size: var(--step-4);
+  font-weight: 900;
+  letter-spacing: -0.025em;
 }
 
 h2 {
@@ -130,7 +133,7 @@ li {
 }
 
 li::marker {
-  color: var(--accent-soft);
+  color: var(--accent-bright);
 }
 
 :focus-visible {
@@ -245,8 +248,8 @@ li::marker {
 }
 
 .brand__text {
-  font-family: var(--font-mono);
-  font-weight: 800;
+  font-family: var(--font-sans);
+  font-weight: 900;
   font-size: 1.3rem;
   color: var(--accent);
   letter-spacing: -0.03em;
@@ -470,82 +473,107 @@ li::marker {
   }
 }
 
-/* --------------------------------------------------------------------------
-   5. Masthead (home) & page headers
-   -------------------------------------------------------------------------- */
-.masthead {
-  padding-block: clamp(3rem, 7vw, 5.5rem) clamp(2rem, 4vw, 3rem);
+/* Hero banner: photo with the title centred over it */
+.hero {
   position: relative;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  min-height: clamp(340px, 46vw, 560px);
+  background: #16212c;
   overflow: hidden;
 }
 
-.masthead::after {
+.hero__media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 52%;
+}
+
+.hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(
-    var(--accent-line) 1px,
-    transparent 1px
+  background: linear-gradient(
+    180deg,
+    rgba(18, 28, 38, 0.62) 0%,
+    rgba(18, 28, 38, 0.44) 45%,
+    rgba(18, 28, 38, 0.66) 100%
   );
-  background-size: 22px 22px;
-  opacity: 0.35;
-  mask-image: linear-gradient(105deg, transparent 58%, #000 100%);
-  -webkit-mask-image: linear-gradient(105deg, transparent 58%, #000 100%);
-  pointer-events: none;
 }
 
-.masthead .col,
-.masthead .wrap {
+.hero__inner {
   position: relative;
   z-index: 1;
+  max-width: 900px;
+  padding: clamp(3rem, 7vw, 5.5rem) 24px;
 }
 
-.masthead h1 {
-  color: var(--accent);
-  font-weight: 800;
+.hero .label {
+  color: rgba(255, 255, 255, 0.82);
+  margin-bottom: 1.1rem;
+}
+
+.hero h1 {
+  color: #fff;
+  font-weight: 900;
   letter-spacing: -0.035em;
-  margin-bottom: 0.2em;
+  margin-bottom: 0.35em;
+  text-shadow: 0 2px 18px rgba(10, 18, 26, 0.35);
 }
 
-.masthead__sub {
-  font-family: var(--font-mono);
+.hero__where {
+  font-family: var(--font-sans);
   font-size: var(--step-2);
-  font-weight: 700;
-  color: var(--ink);
-  margin-bottom: 1.4rem;
-  line-height: 1.3;
+  font-weight: 500;
+  color: #fff;
+  margin: 0;
+  text-shadow: 0 2px 14px rgba(10, 18, 26, 0.4);
 }
 
-/* Countdown pill */
-.days {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent-deep);
-  background: var(--accent-pale);
-  border: 1px solid var(--accent-line);
-  border-radius: 999px;
-  padding: 0.35rem 0.85rem;
-  margin-bottom: 1.5rem;
+.hero__credit {
+  position: absolute;
+  right: 16px;
+  bottom: 10px;
+  z-index: 1;
+  margin: 0;
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.72);
 }
 
-.days:empty {
-  display: none;
+/* Centred intro block under the hero */
+.center {
+  text-align: center;
 }
 
-.days::before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--accent-cyan);
+.center .lead {
+  max-width: 62ch;
+  margin-inline: auto;
 }
 
+.center .note {
+  max-width: 58ch;
+  margin-inline: auto;
+}
+
+.keyfacts--center {
+  max-width: 620px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.keyfacts--center > div {
+  border-left: 1px solid var(--line);
+  border-top: 3px solid var(--accent-bright);
+}
+
+/* --------------------------------------------------------------------------
+   5. Masthead (home) & page headers
+   -------------------------------------------------------------------------- */
 /* Key facts: dates and deadline */
 .keyfacts {
   display: grid;
@@ -557,7 +585,7 @@ li::marker {
 .keyfacts > div {
   background: #fff;
   border: 1px solid var(--line);
-  border-left: 3px solid var(--accent-soft);
+  border-left: 3px solid var(--accent-bright);
   border-radius: 8px;
   padding: 0.85rem 1.1rem;
 }
@@ -630,43 +658,6 @@ li::marker {
   margin-top: 1rem;
 }
 
-/* Photo band under the masthead text */
-.photoband {
-  max-width: var(--wide);
-  margin: clamp(2.25rem, 4.5vw, 3.5rem) auto 0;
-  padding-inline: 24px;
-}
-
-.photoband img {
-  width: 100%;
-  height: clamp(260px, 38vw, 560px);
-  object-fit: cover;
-  object-position: center 38%;
-  border-radius: 12px;
-  box-shadow: 0 1px 2px rgba(31, 42, 55, 0.06),
-    0 12px 28px rgba(31, 42, 55, 0.07);
-}
-
-.photoband figcaption {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  justify-content: flex-end;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-  margin-top: 0.9rem;
-}
-
-.photoband figcaption::before {
-  content: "";
-  width: 18px;
-  height: 2px;
-  border-radius: 2px;
-  background: var(--accent-cyan);
-}
 
 figure {
   margin: 2.5rem 0;
@@ -864,7 +855,7 @@ td.mono {
 .btn:hover {
   background: #fff;
   border-color: var(--accent-bright);
-  color: var(--accent-deep);
+  color: var(--accent-warm);
 }
 
 .btn-row {
@@ -878,11 +869,10 @@ td.mono {
    11. Footer
    -------------------------------------------------------------------------- */
 .site-footer {
-  border-top: 1px solid var(--line);
-  background: var(--paper-alt);
-  padding-block: 2.5rem 1.75rem;
+  background: var(--charcoal);
+  padding-block: 3rem 1.75rem;
   font-size: 0.92rem;
-  color: var(--ink-muted);
+  color: rgba(255, 255, 255, 0.66);
 }
 
 .site-footer__grid {
@@ -890,6 +880,7 @@ td.mono {
   grid-template-columns: 1.5fr 1fr 1fr;
   gap: 2rem;
   padding-bottom: 2rem;
+  border-bottom: 0;
 }
 
 @media (max-width: 720px) {
@@ -906,7 +897,7 @@ td.mono {
   font-size: 0.72rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--ink);
+  color: #fff;
   margin-bottom: 0.9rem;
 }
 
@@ -921,17 +912,18 @@ td.mono {
 }
 
 .site-footer a {
-  color: var(--ink-muted);
+  color: rgba(255, 255, 255, 0.66);
   text-decoration: none;
 }
 
 .site-footer a:hover {
-  color: var(--accent-deep);
+  color: var(--accent-bright);
 }
 
 .site-footer__brand .brand__text {
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   display: block;
+  color: #fff;
   margin-bottom: 0.4rem;
 }
 
@@ -941,8 +933,9 @@ td.mono {
   justify-content: space-between;
   gap: 0.5rem 1.5rem;
   padding-top: 1.25rem;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
   font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.45);
 }
 
 /* --------------------------------------------------------------------------
@@ -965,7 +958,7 @@ td.mono {
   .site-header,
   .site-footer,
   .nav-toggle,
-  .masthead::after {
+  .hero::after {
     display: none !important;
   }
 
@@ -994,4 +987,62 @@ td.mono {
   .topics {
     columns: 1;
   }
+}
+
+/* --------------------------------------------------------------------------
+   15. Justified body text
+   -------------------------------------------------------------------------- */
+.col p,
+.box p,
+.prose p {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+.center p,
+.hero p {
+  text-align: center;
+  hyphens: manual;
+}
+
+/* --------------------------------------------------------------------------
+   16. Partners band
+   -------------------------------------------------------------------------- */
+.partners {
+  background: #fff;
+  border-top: 1px solid var(--line);
+  padding-block: 2.5rem;
+  text-align: center;
+}
+
+.partners .label {
+  margin-bottom: 1.5rem;
+}
+
+.partners__logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(2rem, 6vw, 4.5rem);
+}
+
+.partners__logos img {
+  width: auto;
+  opacity: 0.88;
+  transition: opacity 0.15s ease;
+}
+
+.logo--eg {
+  height: clamp(36px, 4.4vw, 52px);
+}
+
+.logo--elsevier {
+  height: clamp(28px, 3.4vw, 40px);
+}
+
+.partners__logos a:hover img {
+  opacity: 1;
 }
