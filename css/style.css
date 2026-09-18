@@ -680,7 +680,7 @@ figcaption {
 
 .dates > div {
   display: grid;
-  grid-template-columns: 170px 1fr auto;
+  grid-template-columns: 190px 1fr;
   gap: 0.4rem 1.5rem;
   align-items: baseline;
   padding: 1.1rem 0;
@@ -707,27 +707,9 @@ figcaption {
   margin-top: 0.15rem;
 }
 
-.dates .tag {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-  border: 1px solid var(--line);
-  border-radius: 3px;
-  padding: 0.15rem 0.45rem;
-  white-space: nowrap;
-}
-
-.dates .tag--confirmed {
-  color: var(--accent-deep);
-  border-color: var(--accent-line);
-  background: var(--accent-pale);
-}
-
 @media (max-width: 620px) {
   .dates > div {
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr;
   }
 
   .dates dt {
@@ -1045,4 +1027,26 @@ td.mono {
 
 .partners__logos a:hover img {
   opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   17. Map embed
+   -------------------------------------------------------------------------- */
+.map {
+  margin: 0 0 1rem;
+}
+
+.map iframe {
+  display: block;
+  width: 100%;
+  height: clamp(280px, 38vw, 420px);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.map figcaption {
+  font-size: var(--step--1);
+  color: var(--ink-muted);
+  text-align: left;
+  margin-top: 0.65rem;
 }
