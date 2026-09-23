@@ -12,6 +12,18 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<script>try{if(localStorage.getItem('3dor27_unlocked_v1')==='1'){document.documentElement.classList.add('gate-unlocked');}}catch(e){}</script>
+<div id="gate-overlay">
+  <div class="gate-card">
+    <h2>3DOR 2027</h2>
+    <p class="gate-card__note">This preview is password protected.</p>
+    <form id="gate-form" autocomplete="off">
+      <input type="password" id="gate-password" placeholder="Password" required autocomplete="off">
+      <button type="submit">Enter</button>
+      <p id="gate-error" hidden>Incorrect password. Try again.</p>
+    </form>
+  </div>
+</div>
 <a class="skip-link" href="#main">Skip to main content</a>
 
 <header class="site-header">
@@ -145,5 +157,6 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/gate.js"></script>
 </body>
 </html>
