@@ -7,12 +7,12 @@
    1. Tokens
    -------------------------------------------------------------------------- */
 :root {
-  /* Slate blue carries the type, blue grey the structure, cyan is a single touch */
+  /* Slate blue carries the type, blue grey the structure, teal is the accent */
   --accent: #35556e;        /* display headings, brand, links */
   --accent-strong: #26404f; /* hover on slate */
   --accent-deep: #35556e;   /* links and small text (7.8:1 on paper) */
-  --accent-bright: #e97770; /* coral, after 3DOR 2015: rules, underlines, markers */
-  --accent-warm: #c6564e;   /* darker coral where small text needs contrast */
+  --accent-bright: #2fa58a; /* teal: rules, underlines, markers */
+  --accent-warm: #1e7a63;   /* darker teal where small text needs contrast */
   --accent-soft: #b0bec5;   /* blue grey: quiet dividers and borders */
   --charcoal: #2f333b;      /* dark band, after 3DOR 2015 */
   --accent-pale: #eef3f7;
