@@ -484,13 +484,15 @@ li::marker {
   overflow: hidden;
 }
 
-.hero__media {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 52%;
+/* Parallax variant: the photo stays pinned to the viewport while the
+   page scrolls over it, like the banner on sites.google.com/view/3dor26.
+   background-attachment: fixed is not supported on iOS Safari, where it
+   falls back to a normal scrolling background, no breakage either way. */
+.hero--fixed {
+  background-image: url("assets/acropolis.jpg");
+  background-size: cover;
+  background-position: center 52%;
+  background-attachment: fixed;
 }
 
 .hero::after {
