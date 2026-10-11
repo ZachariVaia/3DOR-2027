@@ -671,20 +671,27 @@ figcaption {
    7. Dates list
    -------------------------------------------------------------------------- */
 .dates {
+  display: grid;
+  grid-template-columns: minmax(190px, max-content) 1fr;
+  column-gap: 1.5rem;
   margin: 0 0 2rem;
   border-top: 1px solid var(--line);
 }
 
+/* Each row is a plain wrapper in the markup, but display: contents lifts
+   its dt/dd into the parent grid so every row shares the same column
+   widths, keeping the date column, and the description it lines up
+   with, aligned across the whole list regardless of how long any one
+   date happens to be. */
 .dates > div {
-  display: grid;
-  grid-template-columns: minmax(190px, max-content) 1fr;
-  gap: 0.4rem 1.5rem;
-  align-items: baseline;
-  padding: 1.1rem 0;
-  border-bottom: 1px solid var(--line);
+  display: contents;
 }
 
 .dates dt {
+  grid-column: 1;
+  align-self: baseline;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--line);
   font-family: var(--font-mono);
   font-weight: 700;
   font-size: var(--step-0);
@@ -693,6 +700,10 @@ figcaption {
 }
 
 .dates dd {
+  grid-column: 2;
+  align-self: baseline;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--line);
   margin: 0;
   color: var(--ink);
 }
@@ -705,12 +716,18 @@ figcaption {
 }
 
 @media (max-width: 620px) {
-  .dates > div {
+  .dates {
     grid-template-columns: 1fr;
   }
 
+  .dates dt,
+  .dates dd {
+    grid-column: 1;
+  }
+
   .dates dt {
-    grid-column: 1 / -1;
+    padding-bottom: 0.3rem;
+    border-bottom: 0;
   }
 }
 
