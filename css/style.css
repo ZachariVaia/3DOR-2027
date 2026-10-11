@@ -7,23 +7,24 @@
    1. Tokens
    -------------------------------------------------------------------------- */
 :root {
-  /* Slate blue carries the type, blue grey the structure, cyan is a single touch */
-  --accent: #35556e;        /* display headings, brand, links */
-  --accent-strong: #26404f; /* hover on slate */
-  --accent-deep: #35556e;   /* links and small text (7.8:1 on paper) */
-  --accent-bright: #e97770; /* coral, after 3DOR 2015: rules, underlines, markers */
-  --accent-warm: #c6564e;   /* darker coral where small text needs contrast */
-  --accent-soft: #b0bec5;   /* blue grey: quiet dividers and borders */
-  --charcoal: #2f333b;      /* dark band, after 3DOR 2015 */
-  --accent-pale: #eef3f7;
-  --accent-line: #ccd9e3;
+  /* Royal blue carries the type, burgundy is the rule/marker accent,
+     beige warms the structure (P 102-8 C / P 50-16 C / P 17-1 C) */
+  --accent: #384289;        /* display headings, brand, links */
+  --accent-strong: #2a3269; /* hover on blue */
+  --accent-deep: #384289;   /* links and small text */
+  --accent-bright: #742429; /* burgundy: rules, underlines, markers */
+  --accent-warm: #5c1c20;   /* darker burgundy where small text needs contrast */
+  --accent-soft: #b8a26a;   /* muted beige gold: quiet dividers */
+  --charcoal: #2a2620;      /* warm charcoal footer, paired with the beige */
+  --accent-pale: #efe9d9;
+  --accent-line: #ddd0ab;
 
   --ink: #1f2a37;
   --ink-soft: #2f3943;
   --ink-muted: #6b7280;
-  --line: #e3e8ec;
+  --line: #e4dcc8;
   --paper: #fafbfc;
-  --paper-alt: #f1f6f8;
+  --paper-alt: #f4efe2;
 
   --font-sans: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Helvetica, Arial, sans-serif;
@@ -225,9 +226,13 @@ li::marker {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(217, 226, 234, 0.94);
+  background: rgba(56, 66, 137, 0.97);
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid #c3d1dd;
+  border-bottom: 1px solid #2a3269;
+}
+
+.site-header :focus-visible {
+  outline-color: #efe9d9;
 }
 
 .site-header__inner {
@@ -251,7 +256,7 @@ li::marker {
   font-family: var(--font-sans);
   font-weight: 900;
   font-size: 1.3rem;
-  color: var(--accent);
+  color: #efe9d9;
   letter-spacing: -0.03em;
   line-height: 1.1;
 }
@@ -259,7 +264,7 @@ li::marker {
 .brand__city {
   font-size: 0.68rem;
   font-weight: 500;
-  color: var(--ink-muted);
+  color: rgba(239, 233, 217, 0.65);
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
@@ -281,7 +286,7 @@ li::marker {
   font-family: var(--font-sans);
   font-size: 0.92rem;
   font-weight: 500;
-  color: var(--ink-soft);
+  color: rgba(239, 233, 217, 0.85);
   background: none;
   border: 0;
   border-radius: 5px;
@@ -308,8 +313,8 @@ li::marker {
 
 .nav a:hover,
 .nav__trigger:hover {
-  color: var(--accent-strong);
-  background: var(--accent-pale);
+  color: #efe9d9;
+  background: rgba(239, 233, 217, 0.12);
 }
 
 .nav a:hover::after,
@@ -318,9 +323,9 @@ li::marker {
 }
 
 .nav a.is-active {
-  color: var(--accent-deep);
+  color: #efe9d9;
   font-weight: 600;
-  background: var(--accent-pale);
+  background: rgba(239, 233, 217, 0.14);
 }
 
 .nav a.is-active::after {
@@ -349,10 +354,10 @@ li::marker {
   top: calc(100% + 6px);
   left: 0;
   min-width: 210px;
-  background: #fff;
-  border: 1px solid var(--line);
+  background: #384289;
+  border: 1px solid #2a3269;
   border-radius: 6px;
-  box-shadow: 0 6px 24px rgba(19, 33, 43, 0.1);
+  box-shadow: 0 6px 24px rgba(19, 33, 43, 0.25);
   padding: 0.35rem;
   display: none;
   flex-direction: column;
@@ -377,9 +382,9 @@ li::marker {
   display: none;
   width: 40px;
   height: 40px;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(239, 233, 217, 0.35);
   border-radius: 5px;
-  background: #fff;
+  background: rgba(239, 233, 217, 0.08);
   cursor: pointer;
   position: relative;
   align-items: center;
@@ -392,7 +397,7 @@ li::marker {
   display: block;
   width: 17px;
   height: 2px;
-  background: var(--ink);
+  background: #efe9d9;
   transition: transform 0.2s ease, background 0.2s ease;
 }
 
@@ -433,9 +438,9 @@ li::marker {
     flex-direction: column;
     align-items: stretch;
     gap: 0;
-    background: #e6edf3;
-    border-bottom: 1px solid #c3d1dd;
-    box-shadow: 0 10px 30px rgba(19, 33, 43, 0.08);
+    background: #384289;
+    border-bottom: 1px solid #2a3269;
+    box-shadow: 0 10px 30px rgba(19, 33, 43, 0.25);
     padding: 0.5rem 24px 1.25rem;
     max-height: calc(100vh - var(--header-h));
     overflow-y: auto;
@@ -451,14 +456,14 @@ li::marker {
     width: 100%;
     justify-content: space-between;
     padding: 0.85rem 0.4rem;
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid rgba(239, 233, 217, 0.15);
     border-radius: 0;
     font-size: 1rem;
   }
 
   .nav a.is-active {
     box-shadow: none;
-    color: var(--accent-deep);
+    color: #efe9d9;
     font-weight: 600;
   }
 
@@ -501,9 +506,9 @@ li::marker {
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(18, 28, 38, 0.62) 0%,
-    rgba(18, 28, 38, 0.44) 45%,
-    rgba(18, 28, 38, 0.66) 100%
+    rgba(42, 38, 32, 0.6) 0%,
+    rgba(56, 66, 137, 0.38) 45%,
+    rgba(42, 38, 32, 0.66) 100%
   );
 }
 
