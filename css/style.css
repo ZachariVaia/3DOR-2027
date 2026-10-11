@@ -669,7 +669,7 @@ figcaption {
 
 .dates > div {
   display: grid;
-  grid-template-columns: 190px 1fr;
+  grid-template-columns: minmax(190px, max-content) 1fr;
   gap: 0.4rem 1.5rem;
   align-items: baseline;
   padding: 1.1rem 0;
