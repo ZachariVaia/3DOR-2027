@@ -192,6 +192,12 @@ li::marker {
   padding-top: clamp(2.5rem, 5vw, 4rem);
 }
 
+/* Two tinted sections back to back: same colour for both, so neither
+   reads as more important, separated by a small white gap instead */
+.section--alt + .section--alt {
+  margin-top: 1.5rem;
+}
+
 /* Small caps label */
 .label {
   display: block;
