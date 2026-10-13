@@ -1224,3 +1224,52 @@ html.gate-unlocked #gate-overlay {
   font-size: var(--step--1);
   color: var(--ink-muted);
 }
+
+/* --------------------------------------------------------------------------
+   25. Venue feature: large photo beside text
+   -------------------------------------------------------------------------- */
+.venue-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 3.5rem);
+  align-items: center;
+}
+
+.venue-feature__photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 20px 50px rgba(19, 33, 43, 0.16);
+}
+
+.venue-feature__photo figcaption {
+  font-size: var(--step--1);
+  color: var(--ink-muted);
+  margin-top: 0.65rem;
+}
+
+.venue-feature__text h2 {
+  margin-top: 0;
+}
+
+/* Stacked variant of .keyfacts for a narrower column: a vertical list
+   with a left accent bar instead of the horizontal divided row */
+.keyfacts--stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin: 0 0 1.5rem;
+}
+
+.keyfacts--stack > div {
+  padding: 0 0 0 1rem;
+  border-left: 3px solid var(--accent-soft);
+  border-top: 0;
+}
+
+@media (max-width: 860px) {
+  .venue-feature {
+    grid-template-columns: 1fr;
+  }
+}
