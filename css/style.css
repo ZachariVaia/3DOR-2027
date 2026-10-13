@@ -1239,8 +1239,8 @@ html.gate-unlocked #gate-overlay {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 14px;
-  box-shadow: 0 20px 50px rgba(19, 33, 43, 0.16);
+  border: 1px solid var(--line);
+  border-radius: 12px;
 }
 
 .venue-feature__photo figcaption {
