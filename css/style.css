@@ -1331,21 +1331,3 @@ html.gate-unlocked #gate-overlay {
     grid-template-columns: 1fr;
   }
 }
-
-/* --------------------------------------------------------------------------
-   26. 3D shape accent
-   A small rotating wireframe icosahedron (Three.js), grounded in the
-   conference subject rather than decorative for its own sake. Kept to
-   one place on the site.
-   -------------------------------------------------------------------------- */
-.shape3d-wrap {
-  display: flex;
-  justify-content: flex-start;
-  margin: 0.25rem 0 1.5rem;
-}
-
-#shape3d {
-  width: 120px;
-  height: 120px;
-  display: block;
-}
