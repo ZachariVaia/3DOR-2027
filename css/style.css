@@ -1299,6 +1299,7 @@ html.gate-unlocked #gate-overlay {
   height: auto;
   border: 1px solid var(--line);
   border-radius: 12px;
+  will-change: transform;
 }
 
 .venue-feature__photo figcaption {
