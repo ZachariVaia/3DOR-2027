@@ -1201,3 +1201,26 @@ html.gate-unlocked #gate-overlay {
   text-align: left;
   margin-top: 0.65rem;
 }
+
+/* --------------------------------------------------------------------------
+   24. Full-width venue banner
+   -------------------------------------------------------------------------- */
+.venue-banner {
+  margin: 0 0 clamp(2rem, 4vw, 3rem);
+}
+
+.venue-banner img {
+  display: block;
+  width: 100%;
+  height: clamp(260px, 42vw, 460px);
+  object-fit: cover;
+  object-position: center 28%;
+}
+
+.venue-banner figcaption {
+  max-width: var(--wide);
+  margin: 0.75rem auto 0;
+  padding-inline: 24px;
+  font-size: var(--step--1);
+  color: var(--ink-muted);
+}
