@@ -40,6 +40,11 @@
   --col: 760px;   /* reading column */
   --wide: 1080px; /* header, footer, bands */
   --header-h: 66px;
+
+  /* Stronger-than-default easing curves; the built-in CSS ease-out is
+     too weak to feel intentional on a 150-200ms UI entrance. */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 /* --------------------------------------------------------------------------
@@ -362,10 +367,37 @@ li::marker {
   padding: 0.35rem;
   display: none;
   flex-direction: column;
+  transform-origin: top left;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 160ms var(--ease-out), transform 160ms var(--ease-out),
+    display 160ms allow-discrete;
+}
+
+@starting-style {
+  .nav__group.is-open .nav__menu {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav__menu {
+    transform: none;
+    transition: opacity 160ms ease, display 160ms allow-discrete;
+  }
+
+  @starting-style {
+    .nav__group.is-open .nav__menu {
+      opacity: 0;
+    }
+  }
 }
 
 .nav__group.is-open .nav__menu {
   display: flex;
+  opacity: 1;
+  transform: scale(1);
 }
 
 .nav__menu a {
@@ -446,10 +478,23 @@ li::marker {
     max-height: calc(100vh - var(--header-h));
     overflow-y: auto;
     display: none;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 180ms var(--ease-out), transform 180ms var(--ease-out),
+      display 180ms allow-discrete;
+  }
+
+  @starting-style {
+    .nav.is-open {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
   }
 
   .nav.is-open {
     display: flex;
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .nav > a,
@@ -476,6 +521,19 @@ li::marker {
     min-width: 0;
     border-left: 2px solid var(--accent-line);
     margin: 0.5rem 0 0.5rem 0.4rem;
+  }
+}
+
+@media (max-width: 960px) and (prefers-reduced-motion: reduce) {
+  .nav {
+    transform: none;
+    transition: opacity 180ms ease, display 180ms allow-discrete;
+  }
+
+  @starting-style {
+    .nav.is-open {
+      opacity: 0;
+    }
   }
 }
 
