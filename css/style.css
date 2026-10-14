@@ -1331,3 +1331,431 @@ html.gate-unlocked #gate-overlay {
     grid-template-columns: 1fr;
   }
 }
+
+/* --------------------------------------------------------------------------
+   26. Venue hero: real photo, slow zoom, scroll parallax, cursor shift
+   -------------------------------------------------------------------------- */
+.venue-hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: clamp(360px, 52vw, 620px);
+  background: #16212c;
+  overflow: hidden;
+}
+
+.venue-hero__media {
+  position: absolute;
+  inset: -24px;
+  overflow: hidden;
+  transition: transform 0.2s linear;
+}
+
+.venue-hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 32%;
+  transform: scale(1);
+  animation: venue-hero-zoom 26s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes venue-hero-zoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.09);
+  }
+}
+
+.venue-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(18, 28, 38, 0.58) 0%,
+    rgba(18, 28, 38, 0.32) 45%,
+    rgba(18, 28, 38, 0.68) 100%
+  );
+}
+
+.venue-hero__panel {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  margin-inline: 24px;
+  padding: clamp(1.75rem, 4vw, 2.5rem);
+  text-align: center;
+  background: rgba(16, 24, 32, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 380px) {
+  .venue-hero__panel {
+    padding-inline: 1.1rem;
+  }
+
+  .venue-hero__panel h1 {
+    font-size: clamp(2.1rem, 1.3rem + 6vw, 2.7rem);
+  }
+}
+
+.venue-hero__panel .label {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.venue-hero__panel h1 {
+  color: #fff;
+  margin-bottom: 0.4em;
+  text-shadow: 0 2px 18px rgba(10, 18, 26, 0.35);
+}
+
+.venue-hero__panel p {
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .venue-hero__media,
+  .venue-hero__media img {
+    animation: none;
+    transition: none;
+    transform: none !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   27. Quick facts strip (with copy-to-clipboard address)
+   -------------------------------------------------------------------------- */
+.copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-left: 0.6rem;
+  padding: 0.2rem 0.55rem;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--accent-deep);
+  background: var(--accent-pale);
+  border: 1px solid var(--accent-line);
+  border-radius: 4px;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.copy-btn:hover {
+  background: #fff;
+  border-color: var(--accent-bright);
+  color: var(--accent-warm);
+}
+
+.copy-btn svg {
+  width: 11px;
+  height: 11px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+}
+
+.copy-btn.is-copied {
+  color: #2f6b45;
+  border-color: #9fcdad;
+  background: #eef7f0;
+}
+
+/* --------------------------------------------------------------------------
+   28. History timeline (highlights the item in view on scroll)
+   -------------------------------------------------------------------------- */
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding-left: 1.6rem;
+  border-left: 2px solid var(--line);
+}
+
+.timeline__item {
+  position: relative;
+  padding: 0 0 2rem 1.4rem;
+}
+
+.timeline__item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline__item::before {
+  content: "";
+  position: absolute;
+  left: calc(-1.6rem - 5px);
+  top: 0.3rem;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.timeline__year {
+  display: block;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--step-0);
+  color: var(--ink-muted);
+  margin-bottom: 0.3rem;
+  transition: color 0.2s ease;
+}
+
+.timeline__item p {
+  margin-bottom: 0;
+}
+
+.timeline__item.is-active::before {
+  background: var(--accent-bright);
+  transform: scale(1.35);
+}
+
+.timeline__item.is-active .timeline__year {
+  color: var(--accent-warm);
+}
+
+/* --------------------------------------------------------------------------
+   29. Gallery and lightbox
+   -------------------------------------------------------------------------- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.gallery__item {
+  display: block;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: none;
+  overflow: hidden;
+  cursor: zoom-in;
+  line-height: 0;
+}
+
+.gallery__item img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery__item:hover img,
+.gallery__item:focus-visible img {
+  transform: scale(1.06);
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1rem, 4vw, 3rem);
+  background: rgba(15, 20, 26, 0.92);
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+.lightbox__figure {
+  margin: 0;
+  max-width: min(90vw, 1100px);
+  text-align: center;
+}
+
+.lightbox__figure img {
+  display: block;
+  max-width: 100%;
+  max-height: 78vh;
+  margin: 0 auto;
+  border-radius: 6px;
+}
+
+.lightbox__figure figcaption {
+  color: rgba(255, 255, 255, 0.78);
+  margin-top: 0.85rem;
+  text-align: center;
+}
+
+.lightbox__figure figcaption a {
+  color: #fff;
+}
+
+.lightbox__close,
+.lightbox__prev,
+.lightbox__next {
+  position: fixed;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  line-height: 1;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.lightbox__close:hover,
+.lightbox__prev:hover,
+.lightbox__next:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.lightbox__close {
+  top: 20px;
+  right: 20px;
+}
+
+.lightbox__prev {
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lightbox__next {
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 620px) {
+  .lightbox__prev,
+  .lightbox__next {
+    width: 36px;
+    height: 36px;
+    font-size: 1.2rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   30. Getting there: transit tabs
+   -------------------------------------------------------------------------- */
+.transit-tabs {
+  margin-bottom: 1.5rem;
+}
+
+.transit-tabs__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 1.25rem;
+}
+
+.transit-tabs__tab {
+  padding: 0.6rem 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink-muted);
+  background: none;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.transit-tabs__tab:hover {
+  color: var(--accent-warm);
+}
+
+.transit-tabs__tab.is-active {
+  color: var(--accent-deep);
+  border-bottom-color: var(--accent-bright);
+}
+
+.transit-tabs__panel p:last-child {
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   31. Collections cards
+   -------------------------------------------------------------------------- */
+.photoband--portrait img {
+  object-position: center;
+}
+
+.collections {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin-bottom: 0.5rem;
+}
+
+.collections__card {
+  padding: 1.1rem 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.collections__card--highlight {
+  border-color: var(--accent-bright);
+  background: var(--accent-pale);
+}
+
+.collections__card h3 {
+  margin: 0 0 0.4rem;
+  font-size: var(--step-0);
+}
+
+.collections__card p {
+  font-size: var(--step--1);
+  color: var(--ink-muted);
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   32. Nearby list
+   -------------------------------------------------------------------------- */
+.nearby {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+
+.nearby li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.85rem 0;
+  margin: 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.nearby li strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.nearby li span {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  color: var(--ink-muted);
+  white-space: nowrap;
+}

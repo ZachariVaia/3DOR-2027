@@ -1,0 +1,5 @@
+# Full-resolution camera originals, kept locally for reference only.
+# The optimized copies actually used by the pages live in images/venue/web/.
+images/venue/*.jpg
+images/venue/*.jpeg
+images/venue/*.png

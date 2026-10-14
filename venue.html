@@ -66,53 +66,203 @@
 
 <main id="main">
 
-  <section class="page-head">
-    <div class="col">
-      <p class="breadcrumb"><a href="index.html">Home</a> / Venue &amp; travel</p>
-      <h1>Venue &amp; travel</h1>
-      <p>3DOR 2027 is hosted at the Museum of the History of the National and Kapodistrian University of Athens, in the heart of Plaka.</p>
+  <section class="venue-hero" id="venue-hero">
+    <div class="venue-hero__media">
+      <picture>
+        <source srcset="images/venue/web/hero-museum-2000.webp" type="image/webp">
+        <img src="images/venue/web/hero-museum-2000.jpg" alt="The Museum of the History of the National and Kapodistrian University of Athens, a neoclassical building in Plaka" width="1400" height="1550">
+      </picture>
+    </div>
+    <div class="venue-hero__panel">
+      <span class="label">Venue &amp; travel · 2-3 Sep 2027</span>
+      <h1>The Old University</h1>
+      <p>A neoclassical house in the heart of Plaka that was Greece's first university, now the venue for 3DOR 2027.</p>
     </div>
   </section>
 
   <section class="section">
-    <div class="wrap">
-      <div class="venue-feature">
-        <figure class="venue-feature__photo">
-          <img src="assets/venue-museum.jpg" alt="The Museum of the History of the National and Kapodistrian University of Athens, a neoclassical building in Plaka" width="1400" height="1550">
-          <figcaption>
-            Photo: George E. Koronaios, Wikimedia Commons,
-            <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>
-          </figcaption>
-        </figure>
+    <div class="col">
+      <dl class="keyfacts keyfacts--center">
+        <div>
+          <dt>Address</dt>
+          <dd>
+            <span id="venue-address-text">Tholou 5, Plaka, 105 56 Athens</span>
+            <button type="button" class="copy-btn" id="copy-address-btn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="1.5"/><path d="M6 15H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v1"/></svg>
+              <span class="copy-btn__label">Copy</span>
+            </button>
+          </dd>
+        </div>
+        <div>
+          <dt>Nearest metro</dt>
+          <dd>Monastiraki &amp; Syntagma <span class="note">≈10-15 min walk</span></dd>
+        </div>
+        <div>
+          <dt>First university</dt>
+          <dd>1837-1841</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
 
-        <div class="venue-feature__text">
-          <h2>Venue</h2>
-          <hr class="rule">
+  <section class="section section--alt">
+    <div class="col">
+      <h2>History</h2>
+      <hr class="rule">
+      <ol class="timeline" id="venue-timeline">
+        <li class="timeline__item">
+          <span class="timeline__year">Before 1800</span>
+          <p>An Ottoman-period house stood on the site, part of the old neighbourhood of Plaka beneath the Acropolis.</p>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__year">1831</span>
+          <p>Architects Stamatios Kleanthis and Eduard Schaubert bought the house and restored it as their own residence and architectural office.</p>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__year">1837-1841</span>
+          <p>The building became the first seat of the University of Athens, home to the newly founded Greek state's first university.</p>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__year">Later 19th c.</span>
+          <p>After the university outgrew the building, it served a series of other uses, including as army barracks.</p>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__year">1967</span>
+          <p>The building passed into the ownership of the University of Athens.</p>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__year">1987</span>
+          <p>It opened to the public as the Museum of the History of the National and Kapodistrian University of Athens.</p>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__year">2027</span>
+          <p>The museum hosts the 20th 3DOR Symposium.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
 
-          <dl class="keyfacts keyfacts--stack">
-            <div>
-              <dt>Built</dt>
-              <dd>1837-1841</dd>
-            </div>
-            <div>
-              <dt>Architects</dt>
-              <dd>Kleanthis &amp; Schaubert</dd>
-            </div>
-            <div>
-              <dt>Museum since</dt>
-              <dd>1987</dd>
-            </div>
-          </dl>
+  <section class="section">
+    <div class="col">
+      <h2>Gallery</h2>
+      <hr class="rule">
+      <div class="gallery" id="venue-gallery">
+        <button type="button" class="gallery__item"
+          data-full="images/venue/web/museum-courtyard-view-1200.jpg"
+          data-alt="Courtyard view of the museum building with the Athens skyline behind it"
+          data-caption="Courtyard view toward the Athens skyline. Photo: C messier, Wikimedia Commons, <a href=&quot;https://creativecommons.org/licenses/by-sa/4.0/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>CC BY-SA 4.0</a>">
+          <picture>
+            <source srcset="images/venue/web/museum-courtyard-view-400.webp" type="image/webp">
+            <img src="images/venue/web/museum-courtyard-view-400.jpg" alt="Courtyard view of the museum building with the Athens skyline behind it" width="400" height="298" loading="lazy">
+          </picture>
+        </button>
 
-          <p>
-            3DOR 2027 is hosted at the
-            <a href="http://www.historymuseum.uoa.gr/" target="_blank" rel="noopener">Museum of the History of the National and Kapodistrian University of Athens</a>
-            (ΜΙΠΑ), in the building that housed Greece's first university from 1837
-            to 1841. In the heart of Athens, right below the Acropolis, the building
-            was originally the home and architectural office of Stamatios Kleanthis
-            and Eduard Schaubert, the architects behind the first urban plans for the
-            newly founded capital. It became a museum in 1987.
-          </p>
+        <button type="button" class="gallery__item"
+          data-full="images/venue/web/museum-street-facade-1200.jpg"
+          data-alt="Street-level view of the museum's neoclassical facade in Plaka, with the Acropolis rock visible behind it"
+          data-caption="The facade seen from Tholou street, with the Acropolis rock behind it. Photo: C messier, Wikimedia Commons, <a href=&quot;https://creativecommons.org/licenses/by-sa/4.0/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>CC BY-SA 4.0</a>">
+          <picture>
+            <source srcset="images/venue/web/museum-street-facade-400.webp" type="image/webp">
+            <img src="images/venue/web/museum-street-facade-400.jpg" alt="Street-level view of the museum's neoclassical facade in Plaka, with the Acropolis rock visible behind it" width="400" height="315" loading="lazy">
+          </picture>
+        </button>
+
+        <button type="button" class="gallery__item"
+          data-full="images/venue/web/museum-archive-display-1200.jpg"
+          data-alt="A display case inside the museum with historic photographs, books and documents from the university's early history"
+          data-caption="A display case of historic photographs, books and documents from the university's early years. Photo: Wikimedia Commons contributor, <a href=&quot;https://creativecommons.org/licenses/by-sa/3.0/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>CC BY-SA 3.0</a>">
+          <picture>
+            <source srcset="images/venue/web/museum-archive-display-400.webp" type="image/webp">
+            <img src="images/venue/web/museum-archive-display-400.jpg" alt="A display case inside the museum with historic photographs, books and documents from the university's early history" width="400" height="533" loading="lazy">
+          </picture>
+        </button>
+      </div>
+      <p class="note">Click any photo to enlarge. Use the arrow keys to move between photos, Esc to close.</p>
+    </div>
+  </section>
+
+  <div class="lightbox" id="venue-lightbox" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button type="button" class="lightbox__close" id="lightbox-close" aria-label="Close">&times;</button>
+    <button type="button" class="lightbox__prev" id="lightbox-prev" aria-label="Previous photo">&lsaquo;</button>
+    <button type="button" class="lightbox__next" id="lightbox-next" aria-label="Next photo">&rsaquo;</button>
+    <figure class="lightbox__figure">
+      <img id="lightbox-img" src="" alt="">
+      <figcaption id="lightbox-caption"></figcaption>
+    </figure>
+  </div>
+
+  <section class="section section--alt">
+    <div class="col">
+      <h2>Getting there</h2>
+      <hr class="rule">
+
+      <div class="transit-tabs" id="transit-tabs">
+        <div class="transit-tabs__list" role="tablist" aria-label="Nearest metro stations">
+          <button type="button" class="transit-tabs__tab is-active" role="tab" aria-selected="true" aria-controls="transit-panel-monastiraki" id="transit-tab-monastiraki" tabindex="0">Monastiraki</button>
+          <button type="button" class="transit-tabs__tab" role="tab" aria-selected="false" aria-controls="transit-panel-syntagma" id="transit-tab-syntagma" tabindex="-1">Syntagma</button>
+          <button type="button" class="transit-tabs__tab" role="tab" aria-selected="false" aria-controls="transit-panel-akropoli" id="transit-tab-akropoli" tabindex="-1">Akropoli</button>
+        </div>
+        <div class="transit-tabs__panel" id="transit-panel-monastiraki" role="tabpanel" aria-labelledby="transit-tab-monastiraki">
+          <p><strong>Monastiraki</strong> (lines 1 &amp; 3) is about a 10 minute walk through the Plaka lanes.</p>
+        </div>
+        <div class="transit-tabs__panel" id="transit-panel-syntagma" role="tabpanel" aria-labelledby="transit-tab-syntagma" hidden>
+          <p><strong>Syntagma</strong> (lines 2 &amp; 3, and the airport line) is about a 12 minute walk.</p>
+        </div>
+        <div class="transit-tabs__panel" id="transit-panel-akropoli" role="tabpanel" aria-labelledby="transit-tab-akropoli" hidden>
+          <p><strong>Akropoli</strong> (line 2) is about a 15 minute walk, mostly through Plaka and past the Acropolis.</p>
+        </div>
+      </div>
+
+      <p class="btn-row">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Tholou+5+Athens+Greece" target="_blank" rel="noopener">Open in Google Maps</a>
+      </p>
+
+      <p class="note">
+        From Athens International Airport "Eleftherios Venizelos" (ATH), metro line 3 runs directly to
+        Syntagma and on to Monastiraki; the X95 express bus also runs to Syntagma.
+      </p>
+      <p>
+        Early September in Athens is typically warm and dry, with daytime temperatures often around 30 °C.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="col">
+      <h2>Collections</h2>
+      <hr class="rule">
+
+      <figure class="photoband photoband--portrait">
+        <picture>
+          <source srcset="images/venue/web/museum-archive-display-1200.webp" type="image/webp">
+          <img src="images/venue/web/museum-archive-display-1200.jpg" alt="A museum display case with historic photographs, books and documents" width="1200" height="1600" loading="lazy">
+        </picture>
+        <figcaption>
+          Photo: Wikimedia Commons contributor,
+          <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>
+        </figcaption>
+      </figure>
+
+      <div class="collections">
+        <div class="collections__card collections__card--highlight">
+          <h3>Scientific instruments</h3>
+          <p>19th-century instruments used for teaching and research across the university's early schools.</p>
+        </div>
+        <div class="collections__card">
+          <h3>Seals, 1837</h3>
+          <p>The original seals of the university and its first four schools, struck in the year of its founding.</p>
+        </div>
+        <div class="collections__card">
+          <h3>Rare books</h3>
+          <p>Early editions and textbooks from the university's first decades.</p>
+        </div>
+        <div class="collections__card">
+          <h3>Manuscripts</h3>
+          <p>Administrative records and correspondence documenting the university's founding and early years.</p>
+        </div>
+        <div class="collections__card">
+          <h3>Portraits</h3>
+          <p>Portraits of professors and rectors from the university's first generations.</p>
         </div>
       </div>
     </div>
@@ -120,43 +270,20 @@
 
   <section class="section section--alt">
     <div class="col">
-
-      <dl class="dates">
-        <div>
-          <dt>Address</dt>
-          <dd>Tholou 5, Plaka, 105 56 Athens</dd>
-        </div>
-        <div>
-          <dt>Website</dt>
-          <dd><a href="http://www.historymuseum.uoa.gr/" target="_blank" rel="noopener">historymuseum.uoa.gr</a></dd>
-        </div>
-        <div>
-          <dt>Social</dt>
-          <dd>
-            <a href="https://www.facebook.com/The-Athens-University-History-Museum-145859308784783/" target="_blank" rel="noopener">Facebook</a>
-            ·
-            <a href="https://www.instagram.com/historymuseum_uoa/" target="_blank" rel="noopener">Instagram</a>
-          </dd>
-        </div>
-      </dl>
-
-      <p class="note">
-        More photos of the museum are on its own website and social channels, linked
-        above. See the <a href="contact.html">contact page</a> for a map.
-      </p>
-
-      <h2>Getting to Athens</h2>
+      <h2>Nearby</h2>
       <hr class="rule">
-      <p>
-        Athens International Airport “Eleftherios Venizelos” (ATH) is the main gateway,
-        connected to the city centre by metro line 3, suburban rail and express buses.
-        Within the city, three metro lines plus trams and buses cover most districts.
-      </p>
-      <p>
-        Early September in Athens is typically warm and dry, with daytime temperatures
-        often around 30 °C.
-      </p>
+      <ul class="nearby">
+        <li><strong>Roman Agora</strong><span>≈3 min walk</span></li>
+        <li><strong>Anafiotika</strong><span>≈5 min walk</span></li>
+        <li><strong>Ancient Agora</strong><span>≈8 min walk</span></li>
+        <li><strong>Acropolis</strong><span>≈12-15 min walk</span></li>
+        <li><strong>Acropolis Museum</strong><span>≈15-18 min walk</span></li>
+      </ul>
+    </div>
+  </section>
 
+  <section class="section">
+    <div class="col">
       <h2>Accommodation</h2>
       <hr class="rule">
       <p class="tba-line">To be announced</p>
@@ -169,6 +296,9 @@
       <hr class="rule">
       <p class="tba-line">To be announced</p>
 
+      <p class="note">
+        See the <a href="contact.html">contact page</a> for the organising committee's details.
+      </p>
     </div>
   </section>
 
@@ -225,6 +355,7 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/venue.js"></script>
 <!-- <script src="js/gate.js"></script> -->
 </body>
 </html>
